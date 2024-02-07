@@ -31,7 +31,7 @@ uploaded_file = st.file_uploader("Uploader le fichier txt", type=['txt'])
 if uploaded_file is not None:
     try:
         # Lecture du fichier CSV
-        df = pd.read_csv(uploaded_file, sep='|', encoding='latin-1', error_bad_lines=False)
+        df = pd.read_csv(uploaded_file, sep='|', encoding='latin-1')
         st.write("La taille du fichier chargé: ", df['ND             '].count())
         # Nettoyage du DataFrame
         df = clean_dataframe(df)
